@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Async-Sim: Realtime Asynchronous Robot Simulation Benchmarking</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="hero">
+  <div class="container">
+    <h1 class="paper-title">
+      Robot Simulation Benchmarking Should Be<br>
+      Realtime and Asynchronous
+    </h1>
+
+    <div class="authors">
+      <span class="author">Anonymous Authors</span>
+    </div>
+
+    <div class="links">
+      <a href="#" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+        Paper
+      </a>
+      <a href="#" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        Code
+      </a>
+      <a href="#" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4zm0 4h10v2H4z"/></svg>
+        arXiv
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TEASER ===== -->
+<section class="section teaser-section">
+  <div class="container">
+    <div class="teaser-placeholder">
+      <span>Teaser Figure</span>
+      <p>Synchronous vs. Asynchronous simulation diagram</p>
+    </div>
+    <p class="teaser-caption">
+      <strong>Figure 1.</strong> [Teaser caption placeholder]
+    </p>
+  </div>
+</section>
+
+<!-- ===== ABSTRACT ===== -->
+<section class="section">
+  <div class="container narrow">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">
+      Simulation is an indispensable tool for evaluating robot policies in a safe and scalable manner.
+      Current simulation benchmarks run robot policies <em>synchronously</em>, pausing the simulation to let
+      the policy &ldquo;think&rdquo; for as long as it needs before executing actions. However, real world
+      physics does not wait for policies. Synchronous benchmarks introduce an artificial sim-to-real gap
+      by providing an unfair advantage to heavyweight policies with large backbones or multi-pass inference
+      that may be performant, but are too slow in the real world.
+    </p>
+    <p class="abstract-text">
+      In this work, we show how any synchronous robotic simulation benchmark can be made asynchronous by
+      running the simulator and policy in parallel threads. The simulator is run in realtime and communicates
+      with the policy via inter-process queues for observations and actions. Importantly, the rate at which
+      the simulator runs is decoupled from the rate at which the policy consumes observations and produces actions.
+    </p>
+    <p class="abstract-text">
+      We instantiate our approach in <code>robosuite</code>, which is a building block for multiple robotic
+      simulation benchmarks, thereby automatically making these benchmarks asynchronous. We show that
+      performance in asynchronous simulation of various benchmark robotics tasks is significantly more
+      correlated with real-world performance than synchronous simulation, providing a simple and effective
+      way to reduce the sim-to-real gap of existing simulation benchmarks.
+    </p>
+  </div>
+</section>
+
+<!-- ===== METHOD ===== -->
+<section class="section section-gray">
+  <div class="container">
+    <h2 class="section-title">Method</h2>
+    <div class="method-figure-placeholder">
+      <span>Method Diagram</span>
+      <p>Architecture / Pipeline Figure</p>
+    </div>
+    <p class="figure-caption">
+      <strong>Figure 2.</strong> [Method figure caption placeholder]
+    </p>
+    <div class="method-text-grid">
+      <div class="method-card">
+        <h3>Asynchronous Execution</h3>
+        <p>[Description placeholder]</p>
+      </div>
+      <div class="method-card">
+        <h3>Realtime Simulation</h3>
+        <p>[Description placeholder]</p>
+      </div>
+      <div class="method-card">
+        <h3>Inter-process Communication</h3>
+        <p>[Description placeholder]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIDEOS ===== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Videos</h2>
+    <p class="section-subtitle">[Video section description placeholder]</p>
+    <div class="video-grid">
+      <div class="video-item">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="video-label">Synchronous — Task A</p>
+      </div>
+      <div class="video-item">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="video-label">Asynchronous — Task A</p>
+      </div>
+      <div class="video-item">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="video-label">Synchronous — Task B</p>
+      </div>
+      <div class="video-item">
+        <div class="video-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <p class="video-label">Asynchronous — Task B</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section class="section section-gray">
+  <div class="container">
+    <h2 class="section-title">Results</h2>
+    <p class="section-subtitle">[Results description placeholder]</p>
+    <div class="table-wrapper">
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Policy</th>
+            <th>Inference Time (ms)</th>
+            <th>Sync Success Rate (%)</th>
+            <th>Async Success Rate (%)</th>
+            <th>Real-World Success Rate (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Policy A (Lightweight)</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Policy B (Medium)</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Policy C (Heavyweight)</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Policy D (Multi-pass)</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-caption"><strong>Table 1.</strong> [Table caption placeholder]</p>
+
+    <div class="results-figure-placeholder">
+      <span>Results Figure</span>
+      <p>Correlation plot: Sync vs. Real-World &nbsp;|&nbsp; Async vs. Real-World</p>
+    </div>
+    <p class="figure-caption"><strong>Figure 3.</strong> [Results figure caption placeholder]</p>
+  </div>
+</section>
+
+<!-- ===== BIBTEX ===== -->
+<section class="section">
+  <div class="container narrow">
+    <h2 class="section-title">BibTeX</h2>
+    <pre class="bibtex"><code>@article{asyncsim2025,
+  title     = {Robot Simulation Benchmarking Should Be Realtime and Asynchronous},
+  author    = {Anonymous Authors},
+  journal   = {arXiv preprint},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Anonymous Authors</p>
+  </div>
+</footer>
+
+</body>
+</html>
